@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基础测试</title>
+    <script src = '../Vue基础/vue.js'></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <p>{{msg}}</p>
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'Hello Vue!',
+            msg2: 'Hello Vue!',
+            msg23: '<h1>插入h标签</h1>'
+        },
+        watch:{
+            msg:function(newvalue,oldvalue){
+                //console.log(newvalue,oldvalue)
+                if (newvalue ==100000){
+
+                    this.msg = 1;
+                }
+
+            }
+        }
+    });
+</script>
+</body>
+</html>

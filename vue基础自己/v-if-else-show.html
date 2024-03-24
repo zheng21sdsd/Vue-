@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基础测试</title>
+    <script src = '../Vue基础/vue.js'></script>
+</head>
+<body>
+<div id="app">
+    <div v-if = "msg_ran>0.5">
+        {{msg_ran}}
+        显示
+    </div>
+    <div v-else>
+        {{msg_ran}}
+    </div>
+    <h3 v-show="show">郑潮太</h3>
+    <button v-show="show" >郑潮太</button>
+    <button v-show="show" >郑潮太</button>
+
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'Hello Vue!',
+            msg2: 'Hello Vue!',
+            msg23: '<h1>插入h标签</h1>',
+            msg_ran:Math.random(),
+            show:true
+        }
+    });
+</script>
+<!--传统的点击消失 函数-->
+<script>
+    // 获取button元素   querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。
+    button = document.querySelector('button')
+    function handleClick(){
+        // 改变show的值
+        app.show = !app.show
+    }
+    // 给button绑定点击事件    addEventListener() 方法用于向指定元素添加事件句柄。
+    button.addEventListener('click',handleClick)
+</script>
+
+</body>
+</html>

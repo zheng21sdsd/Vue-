@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-model   input 复选框  单选框</title>
+    <script src = '../Vue基础/vue.js'></script>
+</head>
+<body>
+<div id="app">
+<!--  <input type="text">-->
+<!--  复选框单选-->
+  <label for="checkbox">{{checked}}</label>
+  <input type="checkbox" id = 'checkbox' v-model = 'checked'>
+<!--  复选框多选-->
+  <div class = 'box'>
+    <label for="a">黄瓜</label>
+    <input type="checkbox" id="a" value="黄瓜" v-model="checkNames">
+
+    <label for="b">芸豆</label>
+    <input type="checkbox" id="b" value="芸豆" v-model="checkNames">
+
+    <label for="a1">西瓜</label>
+    <input type="checkbox" id="a1" value="西瓜" v-model="checkNames">
+    <br>
+
+    <span>{{checkNames}}</span>
+<!--    选择框-->
+<!--    <div>-->
+<!--      <select v-model="selected_value">-->
+<!--        <option disabled value = ''>请选择</option>-->
+<!--        <option value="A">A</option>-->
+<!--        <option value="B">B</option>-->
+<!--        <option value="C">C</option>-->
+<!--      </select>-->
+<!--      <span>selected_value：{{selected_value}}</span>-->
+<!--    </div>-->
+
+
+        <div>
+      <select   v-model="selected_value_mu" multiple style="width: 50px" >
+        <option disabled value = ''>请选择</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <span>selected_value_mu：{{selected_value_mu}}</span>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'Hello Vue!',
+            msg2: 'Hello Vue!',
+            msg23: '<h1>插入h标签</h1>',
+            checked:false,
+            checkNames:[],
+            selected_value:{},
+            selected_value_mu:[],
+
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基础测试</title>
+    <script src = '../Vue基础/vue.js'></script>
+</head>
+<body>
+<div id="app">
+    <p v-text="msg"> </p>
+    <h1 v-text="msg2"> </h1>
+    <div v-html = 'msg23'></div>
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'Hello Vue!',
+            msg2: 'Hello Vue!',
+            msg23: '<h1>插入h标签</h1>',
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue插值</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{msg}}</h2>
+    <h2>{{2}}</h2>
+    <h2>{{'hello'+msg}}</h2>
+    <h2>{{1>2? "true":'false'}}</h2>
+    <h2>{{test.split('').reverse().join('')}}</h2>
+    <h2>{{getCont()}}</h2>
+    <h2>{{msg3}}</h2>
+
+
+</div>
+
+<script src = '../Vue基础/vue.js'></script>
+<script>
+    const vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello vue',
+            test:'hello world',
+            msg2:'func content',
+            msg3:<p>hello</p>
+        },
+        methods:{
+            getCont(){
+                //return 'func content';
+                // this 指的是vm
+                return this.msg+''+this.msg2;
+            }
+        }
+
+
+    });
+    console.log(vm)
+    console.log(vm.$data)
+    //打印vm  可以看见为什么可以拿到msg
+</script>
+</body>
+</html>

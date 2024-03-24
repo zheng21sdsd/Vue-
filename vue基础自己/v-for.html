@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for = 'i in arr'>
+            {{i}}
+        </li>
+    </ul>
+     <ol>
+        <li v-for = '(i,index) in arr' :key="index">
+            {{index}}-{{i}}
+        </li>
+    </ol>
+</div>
+
+<script src = '../Vue基础/vue.js'></script>
+<script>
+    app = new Vue({
+        el:'#app',
+        data:{
+            arr:[1,2,3,4,5,6,7,8,9,10],
+        }
+    });
+</script>
+</body>
+</html>

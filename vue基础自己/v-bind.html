@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基础测试</title>
+    <script src = '../Vue基础/vue.js'></script>
+    <style>
+        .Activate_Class{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <a href="https://www.zct.ink"></a>
+    <a v-bind:href="res.url2" v-bind:title='res.tag'>{{res.name2}}</a>
+    <img v-bind:src='res.ima_path'></img>
+<!--    // 这个类的值为True就可以使用这个类-->
+    <button v-bind:class="{Activate_Class:value}" class="value" @click = 'hidden'> v-bind:class测试</button>
+    <p v-bind:style="{color:isColor,fontSize:fontsize+'px'}">测试isColor fontSize</p>
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'Hello Vue!',
+            msg2: 'Hello Vue!',
+            msg23: '<h1>插入h标签</h1>',
+            res:{
+                name:'百度',
+                url:'https://www.baidu.com',
+                tag:'baidu',
+                ima_path:'my-answer.png',
+                name2:'zct',
+                url2:'https://www.zct.ink',
+            },
+            value:true,
+            isColor:'red',
+            fontsize:30,
+
+        },
+        methods:{
+            hidden(){
+                this.value = !this.value
+            }
+        }
+    });
+</script>
+</body>
+</html>

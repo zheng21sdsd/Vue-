@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基础测试</title>
+    <script src = '../Vue基础/vue.js'></script>
+</head>
+<style>
+    .Avtivate{
+        height: 100px;
+        width: 100px;
+        color: red;
+    }
+    .box{
+        height: 100px;
+        width: 100px;
+
+    }
+
+</style>
+<body>
+<div id="app">
+    <p v-text="msg"> </p>
+    <h1 v-text="msg2"> </h1>
+    <div v-html = 'msg23'></div>
+    <h3>{{num}}</h3>
+<!--    <button v-on:click="num+=1">+1</button>-->
+<!--    <button v-on:click="handle">+1</button>-->
+    <button class = 'box' v-bind:class="{Avtivate:activate}"  @click="handlecolor">更换颜色</button>
+    <div class = 'box'  v-bind:class="{Avtivate:activate}"  @click.once="handlecolor">更换颜色</div>
+    <input v-on:keyup.up="submit">更换颜色</input>
+
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'Hello Vue!',
+            msg2: 'Hello Vue!',
+            msg23: '<h1>插入h标签</h1>',
+            num: 1,
+            activate: true,
+        },
+        methods:{
+            handle(){
+                this.num += 1
+            },
+            handlecolor(){
+                this.activate = !this.activate
+            },
+            submit(){
+                alert('提交');
+            },
+        }
+    });
+</script>
+</body>
+</html>

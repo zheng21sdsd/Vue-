@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue基础测试</title>
+    <script src = '../Vue基础/vue.js'></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model = 'msg'>
+    <p>{{msg}}</p>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: '小马哥',
+
+        }
+    });
+</script>
+</body>
+</html>
